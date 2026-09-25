@@ -23,7 +23,21 @@
         "SESSION_RECORDED",
         "RISK_FLAGGED",
         "ACTIVITY_PAUSED",
-        "REVIEW_COMPLETED"
+        "REVIEW_COMPLETED",
+        "SCREENING_RECORDED",
+        "PRESCRIPTION_ISSUED",
+        "PRESCRIPTION_TRANSFERRED",
+        "SESSION_SCHEDULED",
+        "SESSION_COMPLETED",
+        "SESSION_REJECTED",
+        "OBSERVATION_RECORDED",
+        "RISK_SUGGESTION_GENERATED",
+        "RISK_ESCALATED",
+        "ACTIVITY_RESUMED",
+        "EMERGENCY_STOPPED",
+        "RETRO_REVIEW_OPENED",
+        "RETRO_REVIEW_RESOLVED",
+        "VENUE_HANDOFF_COMPLETED"
       ]
     },
     "aggregate_type": {
@@ -32,7 +46,12 @@
         "participant_plan",
         "activity_session",
         "risk_observation",
-        "clinical_handoff"
+        "clinical_handoff",
+        "participant_chain",
+        "prescription",
+        "training_session",
+        "review_task",
+        "venue_handoff"
       ]
     },
     "aggregate_id": {
