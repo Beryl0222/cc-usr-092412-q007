@@ -1,6 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "超慢跑风险接力领域事件",
+  "description": "所有事件按 occurred_at（发生时间）进入参与者个人链；事件一经接收，event_id、occurred_at、version 不得原地改写，更正只能追加后继事件。业务载荷统一放在 payload 中，签署信息放在 payload.signed_by。",
   "type": "object",
   "required": [
     "event_id",
@@ -19,16 +20,25 @@
     "event_type": {
       "type": "string",
       "enum": [
+        "SCREENING_RECORDED",
+        "CONTRAINDICATION_NOTED",
+        "RISK_TIER_SIGNED",
         "PLAN_APPROVED",
+        "VENUE_TRANSFERRED",
         "SESSION_RECORDED",
+        "ABNORMAL_OBSERVATION_RECORDED",
+        "EMERGENCY_STOP_ISSUED",
+        "PAUSE_SIGNED",
+        "REVIEW_COMPLETED",
+        "RESUMPTION_SIGNED",
         "RISK_FLAGGED",
-        "ACTIVITY_PAUSED",
-        "REVIEW_COMPLETED"
+        "ACTIVITY_PAUSED"
       ]
     },
     "aggregate_type": {
       "type": "string",
       "enum": [
+        "participant_chain",
         "participant_plan",
         "activity_session",
         "risk_observation",
@@ -50,6 +60,10 @@
     "summary": {
       "type": "string",
       "minLength": 1
+    },
+    "payload": {
+      "type": "object",
+      "description": "事件业务载荷，结构由服务按 event_type 校验；教练角色的读取投影不得返回筛查与禁忌细节。"
     }
   },
   "additionalProperties": true

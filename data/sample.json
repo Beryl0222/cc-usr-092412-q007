@@ -1,9 +1,23 @@
 {
   "event_id": "092108-014-sample-001",
-  "event_type": "PLAN_APPROVED",
-  "aggregate_type": "participant_plan",
-  "aggregate_id": "slow_jog_risk_handoff-001",
+  "event_type": "SCREENING_RECORDED",
+  "aggregate_type": "participant_chain",
+  "aggregate_id": "participant:P-0001",
   "occurred_at": "2026-09-20T18:00:00+08:00",
   "version": 1,
-  "summary": "登记超慢跑风险接力的首条领域记录"
+  "summary": "登记参与者初筛记录（示例首条领域事件）",
+  "payload": {
+    "participant_id": "P-0001",
+    "venue_id": "V-滨江跑道",
+    "facts": [
+      { "key": "age", "value": 58 },
+      { "key": "resting_hr", "value": 72 },
+      { "key": "has_chest_discomfort_history", "value": false }
+    ],
+    "recorded_by": {
+      "staff_id": "N-01",
+      "name": "王护士",
+      "role": "screening_nurse"
+    }
+  }
 }
